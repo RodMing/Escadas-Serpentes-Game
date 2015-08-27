@@ -1,0 +1,15 @@
+<script src="js/Jquery.js"></script>
+<script src="js/Joguinho/Elementos.js"></script>
+<script src="js/Joguinho/Tabuleiro.js"></script>
+<script src="js/Joguinho/Jogador.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    var tabuleiro = new Tabuleiro(4);
+    tabuleiro.addJogador(new Jogador('Jogador 1'));
+    tabuleiro.addJogador(new Jogador('Jogador 2'));
+    tabuleiro.addJogador(new Jogador('Jogador 3'));
+    tabuleiro.addJogador(new Jogador('Jogador 4'));
+    tabuleiro.start();
+    alert(tabuleiro.getGanhador()+' voce ganhou !!');
+});
+</script>
