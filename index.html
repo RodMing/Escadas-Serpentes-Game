@@ -3,13 +3,20 @@
 <script src="js/Joguinho/Tabuleiro.js"></script>
 <script src="js/Joguinho/Jogador.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    var tabuleiro = new Tabuleiro(4);
-    tabuleiro.addJogador(new Jogador('Jogador 1'));
-    tabuleiro.addJogador(new Jogador('Jogador 2'));
-    tabuleiro.addJogador(new Jogador('Jogador 3'));
-    tabuleiro.addJogador(new Jogador('Jogador 4'));
-    tabuleiro.start();
+function jogar(){
+	var nivel = $("#nivel").val() != '' ? parseInt($("#nivel").val()) : 4;
+	var tabuleiro = new Tabuleiro(nivel);
+	if ($("#j1").val()!='') tabuleiro.addJogador(new Jogador($("#j1").val()));
+	if ($("#j2").val()!='') tabuleiro.addJogador(new Jogador($("#j2").val()));
+	if ($("#j3").val()!='') tabuleiro.addJogador(new Jogador($("#j3").val()));
+	if ($("#j4").val()!='') tabuleiro.addJogador(new Jogador($("#j4").val()));
+	tabuleiro.start();
     alert(tabuleiro.getGanhador()+' voce ganhou !!');
-});
+}
 </script>
+Nivel:<input type='text' id='nivel' value=''/><br>
+Jogador1:<input type='text' id='j1' value=''/><br>
+Jogador2:<input type='text' id='j2' value=''/><br>
+Jogador3:<input type='text' id='j3' value=''/><br>
+Jogador4:<input type='text' id='j4' value=''/><br>
+<input type='button' id='jogar' value='JOGAR' onclick='jogar()'/>

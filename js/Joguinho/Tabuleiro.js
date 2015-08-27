@@ -1,5 +1,6 @@
 var Tabuleiro = function(nivel) {
     if (nivel < 4 || nivel > 100) throw 'O nivel deve ser entre 4 e 100';
+    if (nivel%4 != 0) throw 'O nivel deve ser multiplo de 4';
     this.elementos = new Elementos;
     this.elementos.gerar(nivel);
     this.jogadores = [];
@@ -10,6 +11,7 @@ Tabuleiro.prototype.addJogador = function(jogador) {
 }
 
 Tabuleiro.prototype.start = function() {
+    if(this.jogadores.length == 0) throw 'Nao existem jogadores';
     while (!this.getGanhador()) {
         var jogadorVez = this.getJogadorVez(jogadorVez);
         this.hasElemento(jogadorVez);
