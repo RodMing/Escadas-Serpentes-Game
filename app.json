@@ -1,0 +1,15 @@
+{
+  "name": "Escadas-Serpentes-Game",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
